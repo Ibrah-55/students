@@ -27,7 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL= False
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'emailemailtesttest1010@gmail.com'
+EMAIL_HOST_PASSWORD ='Karis1010'
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students',
+    'subscribe',
+    'registration',
+    'posts',
+    'Cars',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'root')
+
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'boot'),
+]
